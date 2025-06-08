@@ -451,12 +451,36 @@
 							"request": {
 								"method": "GET",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": "{{url_gorest}}/users"
 							},
 							"response": []
 						},
 						{
 							"name": "[CT002]Busca usuario por ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1435d89b-af48-4f48-81a2-e7cfde020f2c",
+										"exec": [
+											"pm.test(\"Retorna o ID com seus respscitvos dados\", function () {\r",
+											"    pm.expect(pm.response.id).to.be.below(7937559);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "c19b5704-2e42-496b-a2ac-467da16bc62d",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -475,8 +499,7 @@
 									"query": [
 										{
 											"key": "id",
-											"value": "7937559",
-											"type": "text"
+											"value": "7937559"
 										}
 									]
 								}
@@ -662,7 +685,48 @@
 							"response": []
 						}
 					],
-					"id": "27946ba3-b32a-4c5b-a416-59bb2d33e301"
+					"id": "27946ba3-b32a-4c5b-a416-59bb2d33e301",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "25f957c0-f1f5-4dbd-a03b-78a6b4f774e3",
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "7f8ecffe-6e99-4b07-9881-e08aeff7f2bc",
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									"//TEMPO DE RESPOSTA\r",
+									"pm.test(\"Response time is less than 2seg\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+									"});\r",
+									"\r",
+									"//RETORNA NOME\r",
+									"pm.test(\"Retorna os nomes\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Lena Kuphal\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"Mr. Drew Stroman\");\r",
+									"});\r",
+									"\r",
+									"//RETORNA EMAIL\r",
+									"pm.test(\"Retorna os emails\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Lewis.Parisian70@hotmail.com\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"Dolly_Abshire@gmail.com\");\r",
+									"});\r",
+									"\r",
+									""
+								]
+							}
+						}
+					]
 				}
 			],
 			"id": "492a8a43-520d-4e3d-86a0-9ab84aae3596"
