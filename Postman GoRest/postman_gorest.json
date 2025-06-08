@@ -20,8 +20,7 @@
 									"script": {
 										"id": "b061b66e-8955-4208-a7a5-b5dd7061c369",
 										"exec": [
-											"pm.environment.set(\"gender\", \"male\")\r",
-											"pm.environment.set(\"status\", \"inactive\")"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -64,7 +63,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"gender\": \"{{gender}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"status\": \"{{status}}\"\r\n}",
+									"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"gender\": \"{{gender}}\",\r\n    \"email\": \"{{email}}\",\r\n    \"status\": \"{{status}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -132,30 +131,7 @@
 									"script": {
 										"id": "c5b5d6e7-082f-41e1-a479-f42f0d0a3609",
 										"exec": [
-											"//RETONAR ACTIVE OU INACTIVE NO CAMPO STATUS\r",
-											"// Função que retorna true ou false aleatoriamente\r",
-											"function randomBoolean() {\r",
-											"    return Math.random() < 0.5;\r",
-											"}\r",
-											"\r",
-											"// Define o status com base no resultado da função\r",
-											"let status = randomBoolean() ? \"active\" : \"inactive\";\r",
-											"\r",
-											"// Armazena a variável no ambiente local do Postman\r",
-											"pm.environment.set(\"status\", status);\r",
-											"\r",
-											"\r",
-											"//RETONAR MALE OU FEMALE NO CAMPO GENDER\r",
-											"// Função que retorna true ou false aleatoriamente\r",
-											"function randomBoolean() {\r",
-											"    return Math.random() < 0.5;\r",
-											"}\r",
-											"\r",
-											"// Define o genero com base no resultado da função\r",
-											"let gender = randomBoolean() ? \"male\" : \"female\";\r",
-											"\r",
-											"// Armazena a variável no ambiente local do Postman\r",
-											"pm.environment.set(\"gender\", gender);"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -212,7 +188,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "7f547178-847f-4b18-a308-6480055cd06b",
+								"id": "15b16e2d-5de6-435b-85f1-146059b690f3",
 								"type": "text/javascript",
 								"packages": {},
 								"exec": [
@@ -231,15 +207,8 @@
 									"\r",
 									"\r",
 									"\r",
-									"//=================STATUS=================\r",
-									"const names = [\"Lucas\", \"Ana\", \"Carlos\", \"Mariana\", \"João\", \"Isabela\", \"Pedro\", \"Lívia\", \"Felipe\", \"Rafaela\"];\r",
+									"//=================EMAIL=================\r",
 									"const domains = [\"example.com\", \"mail.com\", \"test.com\", \"fakeemail.com\"];\r",
-									"\r",
-									"// Função para gerar nome aleatório\r",
-									"function getRandomName() {\r",
-									"    const index = Math.floor(Math.random() * names.length);\r",
-									"    return names[index];\r",
-									"}\r",
 									"\r",
 									"// Função para gerar email aleatório com nome + número + domínio\r",
 									"function getRandomEmail(name) {\r",
@@ -280,7 +249,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "96028efe-530b-4bdf-922c-24b529c0d390",
+								"id": "be9e5a72-9a0f-412d-8871-494665b0a1f4",
 								"type": "text/javascript",
 								"packages": {},
 								"exec": [
