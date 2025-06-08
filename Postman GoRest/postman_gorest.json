@@ -497,7 +497,7 @@
 										"id": "1435d89b-af48-4f48-81a2-e7cfde020f2c",
 										"exec": [
 											"pm.test(\"Retorna o ID com seus respscitvos dados\", function () {\r",
-											"    pm.expect(pm.response.id).to.be.below(7937559);\r",
+											"    pm.expect(pm.response.id).to.be.below(\"7937559\");\r",
 											"    pm.expect(pm.response.name).to.be.below(\"Leo Wolf\");\r",
 											"    pm.expect(pm.response.text).to.be.below(\"Krystel_Fahey@hotmail.com\");\r",
 											"    pm.expect(pm.response.status).to.be.below(\"active\");\r",
