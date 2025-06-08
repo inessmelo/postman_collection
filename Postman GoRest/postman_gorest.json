@@ -358,14 +358,14 @@
 	"auth": {
 		"type": "bearer",
 		"bearer": {
-			"token": "3ee0a82ab850507acc131ea6be829e1b00085c4ef7eef452778e1bfb83d31239"
+			"token": "3e03bd6e7ef22f33bbd8e34da10983d399cc1041c0ffb7b6a7903a9146a42d30"
 		}
 	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "21c9f6ae-951d-4c96-9d3b-afcd4754931f",
+				"id": "b313b929-a02e-42bb-a64a-8f8d2b0af407",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -376,7 +376,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "0cb8e68e-ebce-4375-8a66-8f613c4dd9b7",
+				"id": "a131a025-a2c8-4e24-8b45-dcd4e2d5946f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
