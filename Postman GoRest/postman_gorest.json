@@ -173,33 +173,13 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "gender",
-											"value": "random(\"female\", \"male\")",
-											"type": "text",
-											"uuid": "3d9de896-74ee-42cb-a0c8-3701df8d6781"
-										},
-										{
-											"key": "status",
-											"value": "random(\"active\", \"inactive\")",
-											"type": "text",
-											"uuid": "38c1dfaf-e823-49ec-bcb1-748fbfafca9a"
-										},
-										{
-											"key": "name",
-											"value": "",
-											"type": "text",
-											"uuid": "e35c3ed2-ee74-4236-91ba-5751412408c9"
-										},
-										{
-											"key": "email",
-											"value": "$randomEmail",
-											"type": "text",
-											"uuid": "be985aff-7f77-4765-9d96-22c9a42f0b20"
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\",\r\n    \"gender\": \"{{gender}}\",\r\n    \"email\": \"{{email}}\",\r\n    \"status\": \"{{status}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": "{{url_gorest}}/users"
 							},
