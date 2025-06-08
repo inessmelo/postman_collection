@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "821f3c61-fe81-4513-a032-d79a32a55237",
+		"name": "GO Rest",
+		"description": "Swagger: [https://gorest.co.in/#google_vignette](https://gorest.co.in/#google_vignette)\n\nObter TOKEN: [https://gorest.co.in/my-account/access-tokens](https://gorest.co.in/my-account/access-tokens)\n\nAPI para cadastro de usuários, Post e comentarios - Rede social",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Cadastrar usuário",
+					"item": [
+						{
+							"name": "[CT001]Cadastro de usuário com sucesso",
+							"id": "9bc04c21-df56-465b-9d3a-57351d01432a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"status\": \"inactive\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_gorest}}/users"
+							},
+							"response": []
+						}
+					],
+					"id": "6fa4dbad-d7e8-4c25-9d17-8e88507ec0fe"
+				},
+				{
+					"name": "Visualisar usuário",
+					"item": [
+						{
+							"name": "[CT001]Buscar todos usuários",
+							"id": "bdef273c-8af5-431f-9599-5832a97d939d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url_gorest}}/users"
+							},
+							"response": []
+						},
+						{
+							"name": "[CT002]Busca usuario por ID",
+							"id": "c19b5704-2e42-496b-a2ac-467da16bc62d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_gorest}}/users?id=7937559",
+									"host": [
+										"{{url_gorest}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "7937559",
+											"type": "text"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "[CT003]Busca usuario por Nome",
+							"id": "46e4f0ca-0223-46b3-906a-1d66f07a6322",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_gorest}}/users?name=Leo Wolf",
+									"host": [
+										"{{url_gorest}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Leo Wolf"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "[CT004]Busca usuario por Genero Masculino",
+							"id": "8b0ec0bc-c389-43ab-aa04-4d49017d630a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_gorest}}/users?gender=male",
+									"host": [
+										"{{url_gorest}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "gender",
+											"value": "male"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "[CT005]Busca usuario por Genero Feminino",
+							"id": "2c81d52a-a73e-4c2a-a919-4cb7ba76a755",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_gorest}}/users?gender=female",
+									"host": [
+										"{{url_gorest}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "gender",
+											"value": "female"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "[CT006]Busca usuario por Staus ativo",
+							"id": "b20e26bd-abb6-4833-9fa6-4444c57fab4d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_gorest}}/users?status=active",
+									"host": [
+										"{{url_gorest}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "active"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "[CT007]Busca usuario por Staus inativo",
+							"id": "d5ee8af2-075b-4bef-90ba-5d1d580fbdf5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_gorest}}/users?status=inactive",
+									"host": [
+										"{{url_gorest}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "inactive"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "[CT008]Busca detalhada",
+							"id": "45223164-7980-4c41-a112-fd3bf1e3188e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_gorest}}/users?id&name=ag&email=&gender=male&status=inactive",
+									"host": [
+										"{{url_gorest}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": null
+										},
+										{
+											"key": "name",
+											"value": "ag"
+										},
+										{
+											"key": "email",
+											"value": ""
+										},
+										{
+											"key": "gender",
+											"value": "male"
+										},
+										{
+											"key": "status",
+											"value": "inactive"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "27946ba3-b32a-4c5b-a416-59bb2d33e301"
+				}
+			],
+			"id": "492a8a43-520d-4e3d-86a0-9ab84aae3596"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "3ee0a82ab850507acc131ea6be829e1b00085c4ef7eef452778e1bfb83d31239"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "21c9f6ae-951d-4c96-9d3b-afcd4754931f",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0cb8e68e-ebce-4375-8a66-8f613c4dd9b7",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
