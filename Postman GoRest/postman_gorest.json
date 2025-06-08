@@ -32,12 +32,6 @@
 									"script": {
 										"id": "32dee309-33fb-44da-a003-e17c185fe0cc",
 										"exec": [
-											"//var jsonData = JSON.parse(responseBody);  // Guarda seu response em uma variavel\r",
-											"\r",
-											"//var tagRecuperada = jsonData.x.id;          // Guarda a tag que vc esta procurando (nesse caso 'list_id') em uma variavel\r",
-											"\r",
-											"//pm.environment.set(\"id_user_busca\", tagRecupera)   // seta o valor da tag extraida na variavel de ambiente 'id_list_lead'\r",
-											"\r",
 											"pm.test(\"Exibe campos no retorno\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"id\");\r",
 											"    pm.expect(pm.response.text()).to.include(\"name\");\r",
@@ -59,7 +53,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"gender\": {{gender}},\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"status\": {{status}}\r\n}",
+									"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"gender\": \"{{gender}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"status\": \"{{status}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -72,6 +66,22 @@
 						},
 						{
 							"name": "[CT002]Validar campos obrigatorios",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "fb4bca14-c48d-4d2c-833f-d367a54fb6be",
+										"exec": [
+											"pm.test(\"Retorna msg de erro\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"can't be blank\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"can't be blank, can be male of female\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "52487239-a1f5-4e57-8539-58615d0f2451",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
