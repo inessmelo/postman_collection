@@ -460,6 +460,14 @@
 											"pm.test(\"Retorna os emails\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"Lewis.Parisian70@hotmail.com\");\r",
 											"    pm.expect(pm.response.text()).to.include(\"Dolly_Abshire@gmail.com\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Retorna dados da busca\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"7937559\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Leo Wolf\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Krystel_Fahey@hotmail.com\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"male\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"active\");\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -495,13 +503,7 @@
 									"script": {
 										"id": "1435d89b-af48-4f48-81a2-e7cfde020f2c",
 										"exec": [
-											"pm.test(\"Retorna dados da busca\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"7937559\");\r",
-											"    pm.expect(pm.response.text()).to.include(\"Leo Wolf\");\r",
-											"    pm.expect(pm.response.text()).to.include(\"Krystel_Fahey@hotmail.com\");\r",
-											"    pm.expect(pm.response.text()).to.include(\"male\");\r",
-											"    pm.expect(pm.response.text()).to.include(\"active\");\r",
-											"});"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -544,6 +546,19 @@
 						},
 						{
 							"name": "[CT003]Busca usuario por Nome",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b825ece6-2ee8-4bd2-8199-5968f6df13cb",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "46e4f0ca-0223-46b3-906a-1d66f07a6322",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -571,6 +586,19 @@
 						},
 						{
 							"name": "[CT004]Busca usuario por Genero Masculino",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b1f7f2e2-9038-4ddd-a4cb-8efa6f34399f",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "8b0ec0bc-c389-43ab-aa04-4d49017d630a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -598,6 +626,25 @@
 						},
 						{
 							"name": "[CT005]Busca usuario por Genero Feminino",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "27f80f4c-52dd-46ed-abae-7cfec7ba646b",
+										"exec": [
+											"pm.test(\"Retorna dados da busca\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"7937976\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Everett Carroll\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Bernice_Lakin43@gmail.com\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"female\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"active\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "2c81d52a-a73e-4c2a-a919-4cb7ba76a755",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -726,7 +773,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "8c518b12-1563-41f4-864a-10dd0a57276c",
+								"id": "595ed651-022e-4524-9b87-d345c08f5ef5",
 								"type": "text/javascript",
 								"packages": {},
 								"exec": [
@@ -737,7 +784,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3282a63c-5f71-40da-80a5-5b4b76e71816",
+								"id": "702caa1a-7f02-44ac-91a0-42c9f3829d09",
 								"type": "text/javascript",
 								"packages": {},
 								"exec": [
