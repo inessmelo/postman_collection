@@ -880,9 +880,59 @@
 					]
 				},
 				{
-					"name": "New Folder",
-					"item": [],
-					"id": "27901bb4-1ae1-4802-ac7e-cfd1be71141b"
+					"name": "Editar usuario",
+					"item": [
+						{
+							"name": "New Request",
+							"id": "7473cc4d-e937-439d-b650-7e969ca345fb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
+					"id": "27901bb4-1ae1-4802-ac7e-cfd1be71141b",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9fe249a1-d3e6-4a53-ad02-f9648db1d8e2",
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "62f258d7-bafe-47dd-a711-b124983e36f9",
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									"//TEMPO DE RESPOSTA\r",
+									"pm.test(\"Response time is less than 2seg\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+									"});\r",
+									"\r",
+									"//STATUS CODE DE SUCESSO\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"//STATUS DE CRIADO COM SUCESSO\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								]
+							}
+						}
+					]
 				}
 			],
 			"id": "492a8a43-520d-4e3d-86a0-9ab84aae3596"
