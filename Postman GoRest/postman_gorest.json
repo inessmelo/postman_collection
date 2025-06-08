@@ -135,7 +135,7 @@
 											"pm.collectionVariables.set(\"gender\", random(\"female\", \"male\"))\r",
 											"pm.collectionVariables.set(\"status\", random(\"active\", \"inactive\"))\r",
 											"pm.environment.set(\"name\", \"\")\r",
-											"pm.environment.set(\"email\", random(randomEmail))\r",
+											"pm.environment.set(\"email\", \"\")\r",
 											"\r",
 											""
 										],
