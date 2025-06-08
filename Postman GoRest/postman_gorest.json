@@ -32,6 +32,17 @@
 									"script": {
 										"id": "32dee309-33fb-44da-a003-e17c185fe0cc",
 										"exec": [
+											"//STATUS CODE DE SUCESSO\r",
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"//STATUS DE CRIADO COM SUCESSO\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"Created\");\r",
+											"});\r",
+											"\r",
+											"//RETORNA CAMPOS\r",
 											"pm.test(\"Exibe campos no retorno\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"id\");\r",
 											"    pm.expect(pm.response.text()).to.include(\"name\");\r",
@@ -72,6 +83,17 @@
 									"script": {
 										"id": "fb4bca14-c48d-4d2c-833f-d367a54fb6be",
 										"exec": [
+											"//STATUS CODE DE SUCESSO\r",
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"//STATUS DE CRIADO COM SUCESSO\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"Created\");\r",
+											"});\r",
+											"\r",
+											"//RETORNA MSG DE ERRO\r",
 											"pm.test(\"Retorna msg de erro\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"can't be blank\");\r",
 											"    pm.expect(pm.response.text()).to.include(\"can't be blank, can be male of female\");\r",
@@ -130,7 +152,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "a1defc35-fe7e-40fd-9268-d2afc3f5bde7",
+								"id": "8472c590-0c25-4dc6-904f-96d654cb7d28",
 								"type": "text/javascript",
 								"packages": {},
 								"exec": [
@@ -141,23 +163,13 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "53b7400b-6258-4132-b9a6-aa287bf7802e",
+								"id": "29d66fde-043e-48b6-985f-386171e008de",
 								"type": "text/javascript",
 								"packages": {},
 								"exec": [
 									"//TEMPO DE RESPOSTA\r",
 									"pm.test(\"Response time is less than 2seg\", function () {\r",
 									"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
-									"});\r",
-									"\r",
-									"//STATUS CODE DE SUCESSO\r",
-									"pm.test(\"Status code is 201\", function () {\r",
-									"    pm.response.to.have.status(201);\r",
-									"});\r",
-									"\r",
-									"//STATUS DE CRIADO COM SUCESSO\r",
-									"pm.test(\"Status code name has string\", function () {\r",
-									"    pm.response.to.have.status(\"Created\");\r",
 									"});"
 								]
 							}
