@@ -126,6 +126,48 @@
 						},
 						{
 							"name": "[CT003]Validar obrigatoriedade do campo nome",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "c5b5d6e7-082f-41e1-a479-f42f0d0a3609",
+										"exec": [
+											"pm.collectionVariables.set(\"gender\", random(\"female\", \"male\"))\r",
+											"pm.collectionVariables.set(\"status\", random(\"active\", \"inactive\"))\r",
+											"pm.environment.set(\"name\", \"\")\r",
+											"pm.environment.set(\"email\", random(randomEmail))\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "f0a13344-52ca-4401-b441-05a072c9756f",
+										"exec": [
+											"//STATUS CODE DE SUCESSO\r",
+											"pm.test(\"Status code is 422\", function () {\r",
+											"    pm.response.to.have.status(422);\r",
+											"});\r",
+											"\r",
+											"//STATUS DE CRIADO COM SUCESSO\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"Unprocessable Entity\");\r",
+											"});\r",
+											"\r",
+											"//RETORNA MSG DE ERRO\r",
+											"pm.test(\"Retorna msg de erro\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"can't be blank\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "a60d52cc-ea11-4e83-aaed-e654b2026526",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -135,7 +177,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"\",\r\n    \"gender\": \"female\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"status\": \"active\"\r\n}",
+									"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"gender\": \"{{gender}}\",\r\n    \"email\": \"{{email}}\",\r\n    \"status\": \"{{status}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
