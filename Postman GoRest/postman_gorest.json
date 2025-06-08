@@ -496,11 +496,12 @@
 									"script": {
 										"id": "1435d89b-af48-4f48-81a2-e7cfde020f2c",
 										"exec": [
-											"pm.test(\"Retorna o ID com seus respscitvos dados\", function () {\r",
-											"    pm.expect(pm.response.id).to.be.below(7937559)\r",
-											"});\r",
-											"\r",
-											""
+											"pm.test(\"Retorna dados da busca\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"7937559\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Krystel_Fahey@hotmail.com\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"male\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"active\");\r",
+											"});"
 										],
 										"type": "text/javascript",
 										"packages": {}
