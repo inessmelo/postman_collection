@@ -444,6 +444,30 @@
 					"item": [
 						{
 							"name": "[CT001]Buscar todos usuários",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "47537ab5-7c74-4ff9-a397-72cdd23ea3bf",
+										"exec": [
+											"\r",
+											"//RETORNA NOME\r",
+											"pm.test(\"Retorna os nomes\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Lena Kuphal\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Mr. Drew Stroman\");\r",
+											"});\r",
+											"\r",
+											"//RETORNA EMAIL\r",
+											"pm.test(\"Retorna os emails\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Lewis.Parisian70@hotmail.com\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Dolly_Abshire@gmail.com\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "bdef273c-8af5-431f-9599-5832a97d939d",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -474,6 +498,9 @@
 										"exec": [
 											"pm.test(\"Retorna o ID com seus respscitvos dados\", function () {\r",
 											"    pm.expect(pm.response.id).to.be.below(7937559);\r",
+											"    pm.expect(pm.response.name).to.be.below(\"Leo Wolf\");\r",
+											"    pm.expect(pm.response.text).to.be.below(\"Krystel_Fahey@hotmail.com\");\r",
+											"    pm.expect(pm.response.status).to.be.below(\"active\");\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -690,7 +717,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "25f957c0-f1f5-4dbd-a03b-78a6b4f774e3",
+								"id": "8c518b12-1563-41f4-864a-10dd0a57276c",
 								"type": "text/javascript",
 								"packages": {},
 								"exec": [
@@ -701,7 +728,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7f8ecffe-6e99-4b07-9881-e08aeff7f2bc",
+								"id": "3282a63c-5f71-40da-80a5-5b4b76e71816",
 								"type": "text/javascript",
 								"packages": {},
 								"exec": [
@@ -710,18 +737,15 @@
 									"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
 									"});\r",
 									"\r",
-									"//RETORNA NOME\r",
-									"pm.test(\"Retorna os nomes\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"Lena Kuphal\");\r",
-									"    pm.expect(pm.response.text()).to.include(\"Mr. Drew Stroman\");\r",
+									"//STATUS CODE DE SUCESSO\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"//RETORNA EMAIL\r",
-									"pm.test(\"Retorna os emails\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"Lewis.Parisian70@hotmail.com\");\r",
-									"    pm.expect(pm.response.text()).to.include(\"Dolly_Abshire@gmail.com\");\r",
+									"//STATUS DE CRIADO COM SUCESSO\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
-									"\r",
 									""
 								]
 							}
