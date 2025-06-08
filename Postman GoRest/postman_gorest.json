@@ -450,16 +450,12 @@
 									"script": {
 										"id": "47537ab5-7c74-4ff9-a397-72cdd23ea3bf",
 										"exec": [
-											"//RETORNA NOME\r",
-											"pm.test(\"Retorna os nomes\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"Lena Kuphal\");\r",
-											"    pm.expect(pm.response.text()).to.include(\"Mr. Drew Stroman\");\r",
-											"});\r",
-											"\r",
-											"//RETORNA EMAIL\r",
-											"pm.test(\"Retorna os emails\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"Lewis.Parisian70@hotmail.com\");\r",
-											"    pm.expect(pm.response.text()).to.include(\"Dolly_Abshire@gmail.com\");\r",
+											"pm.test(\"Retorna dados da busca\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"7937979\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Carlos\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"carlos165@test.com\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"female\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"inactive\");\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Retorna dados da busca\", function () {\r",
@@ -503,7 +499,13 @@
 									"script": {
 										"id": "1435d89b-af48-4f48-81a2-e7cfde020f2c",
 										"exec": [
-											""
+											"pm.test(\"Retorna dados da busca\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"7937559\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Leo Wolf\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Krystel_Fahey@hotmail.com\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"male\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"active\");\r",
+											"});"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -552,7 +554,13 @@
 									"script": {
 										"id": "b825ece6-2ee8-4bd2-8199-5968f6df13cb",
 										"exec": [
-											""
+											"pm.test(\"Retorna dados da busca\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"7937559\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Leo Wolf\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Krystel_Fahey@hotmail.com\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"male\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"active\");\r",
+											"});"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -592,7 +600,13 @@
 									"script": {
 										"id": "b1f7f2e2-9038-4ddd-a4cb-8efa6f34399f",
 										"exec": [
-											""
+											"pm.test(\"Retorna dados da busca\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"7937559\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Leo Wolf\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Krystel_Fahey@hotmail.com\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"male\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"active\");\r",
+											"});"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -672,6 +686,25 @@
 						},
 						{
 							"name": "[CT006]Busca usuario por Staus ativo",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "52a6c5a2-6ab7-4c6c-bf2b-1f29d83fc8ed",
+										"exec": [
+											"pm.test(\"Retorna dados da busca\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"7937559\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Leo Wolf\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Krystel_Fahey@hotmail.com\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"male\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"active\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "b20e26bd-abb6-4833-9fa6-4444c57fab4d",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -699,6 +732,25 @@
 						},
 						{
 							"name": "[CT007]Busca usuario por Staus inativo",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "913f4949-b780-496f-bec2-75987110fc9c",
+										"exec": [
+											"pm.test(\"Retorna dados da busca\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"7937975\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Dr. Josefina Kuhn\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Jaron_Gorczany28@gmail.com\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"female\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"inactive\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "d5ee8af2-075b-4bef-90ba-5d1d580fbdf5",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -726,6 +778,25 @@
 						},
 						{
 							"name": "[CT008]Busca detalhada",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "837ef913-e87d-41b2-9249-2c5e44faaeab",
+										"exec": [
+											"pm.test(\"Retorna dados da busca\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"7935829\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Advaya Tagore\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"advaya_tagore@gleichner.test\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"male\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"inactive\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "45223164-7980-4c41-a112-fd3bf1e3188e",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -807,6 +878,11 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "New Folder",
+					"item": [],
+					"id": "27901bb4-1ae1-4802-ac7e-cfd1be71141b"
 				}
 			],
 			"id": "492a8a43-520d-4e3d-86a0-9ab84aae3596"
