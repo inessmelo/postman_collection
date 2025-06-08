@@ -132,9 +132,30 @@
 									"script": {
 										"id": "c5b5d6e7-082f-41e1-a479-f42f0d0a3609",
 										"exec": [
+											"//RETONAR ACTIVE OU INACTIVE NO CAMPO STATUS\r",
+											"// Função que retorna true ou false aleatoriamente\r",
+											"function randomBoolean() {\r",
+											"    return Math.random() < 0.5;\r",
+											"}\r",
+											"\r",
+											"// Define o status com base no resultado da função\r",
+											"let status = randomBoolean() ? \"active\" : \"inactive\";\r",
+											"\r",
+											"// Armazena a variável no ambiente local do Postman\r",
+											"pm.environment.set(\"status\", status);\r",
 											"\r",
 											"\r",
-											""
+											"//RETONAR MALE OU FEMALE NO CAMPO GENDER\r",
+											"// Função que retorna true ou false aleatoriamente\r",
+											"function randomBoolean() {\r",
+											"    return Math.random() < 0.5;\r",
+											"}\r",
+											"\r",
+											"// Define o genero com base no resultado da função\r",
+											"let gender = randomBoolean() ? \"male\" : \"female\";\r",
+											"\r",
+											"// Armazena a variável no ambiente local do Postman\r",
+											"pm.environment.set(\"gender\", gender);"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -174,7 +195,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"\",\r\n    \"gender\": \"{{gender}}\",\r\n    \"email\": \"{{email}}\",\r\n    \"status\": \"{{status}}\"\r\n}",
+									"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"gender\": \"{{gender}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"status\": \"{{status}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
