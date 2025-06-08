@@ -32,26 +32,17 @@
 									"script": {
 										"id": "32dee309-33fb-44da-a003-e17c185fe0cc",
 										"exec": [
-											"var jsonData = JSON.parse(responseBody);  // Guarda seu response em uma variavel\r",
+											"//var jsonData = JSON.parse(responseBody);  // Guarda seu response em uma variavel\r",
 											"\r",
-											"var tagRecuperada = jsonData.x.id;          // Guarda a tag que vc esta procurando (nesse caso 'list_id') em uma variavel\r",
+											"//var tagRecuperada = jsonData.x.id;          // Guarda a tag que vc esta procurando (nesse caso 'list_id') em uma variavel\r",
 											"\r",
-											"pm.environment.set(\"id_user_busca\", tagRecupera)   // seta o valor da tag extraida na variavel de ambiente 'id_list_lead'\r",
+											"//pm.environment.set(\"id_user_busca\", tagRecupera)   // seta o valor da tag extraida na variavel de ambiente 'id_list_lead'\r",
 											"\r",
-											"pm.test(\"Status code is 201\", function () {\r",
-											"    pm.response.to.have.status(201);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code name has string\", function () {\r",
-											"    pm.response.to.have.status(\"Created\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Exibe campos no retorno\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"id\");\r",
 											"    pm.expect(pm.response.text()).to.include(\"name\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Response time is less than 2seg\", function () {\r",
-											"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+											"    pm.expect(pm.response.text()).to.include(\"gender\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -124,7 +115,44 @@
 							"response": []
 						}
 					],
-					"id": "6fa4dbad-d7e8-4c25-9d17-8e88507ec0fe"
+					"id": "6fa4dbad-d7e8-4c25-9d17-8e88507ec0fe",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a1defc35-fe7e-40fd-9268-d2afc3f5bde7",
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "53b7400b-6258-4132-b9a6-aa287bf7802e",
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									"//TEMPO DE RESPOSTA\r",
+									"pm.test(\"Response time is less than 2seg\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+									"});\r",
+									"\r",
+									"//STATUS CODE DE SUCESSO\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"//STATUS DE CRIADO COM SUCESSO\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});"
+								]
+							}
+						}
+					]
 				},
 				{
 					"name": "Visualisar usuário",
@@ -358,14 +386,14 @@
 	"auth": {
 		"type": "bearer",
 		"bearer": {
-			"token": "3e03bd6e7ef22f33bbd8e34da10983d399cc1041c0ffb7b6a7903a9146a42d30"
+			"token": "a831c7f2b87821c45cf145180a29af04a2ff3f482c423bd19308d26ebc515863"
 		}
 	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b313b929-a02e-42bb-a64a-8f8d2b0af407",
+				"id": "4b0a75ba-c34a-4fb4-b2da-3875d925c975",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -376,7 +404,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a131a025-a2c8-4e24-8b45-dcd4e2d5946f",
+				"id": "21853581-7cb3-4ba7-babf-11b387bf6540",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
