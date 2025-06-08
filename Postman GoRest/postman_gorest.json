@@ -171,7 +171,184 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"gender\": \"{{gender}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"status\": \"{{status}}\"\r\n}",
+									"raw": "{\r\n    \"name\": \"\",\r\n    \"gender\": \"{{gender}}\",\r\n    \"email\": \"{{email}}\",\r\n    \"status\": \"{{status}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_gorest}}/users"
+							},
+							"response": []
+						},
+						{
+							"name": "[CT004]Validar obrigatoriedade do campo Genero",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "c5b5d6e7-082f-41e1-a479-f42f0d0a3609",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "f0a13344-52ca-4401-b441-05a072c9756f",
+										"exec": [
+											"//STATUS CODE DE SUCESSO\r",
+											"pm.test(\"Status code is 422\", function () {\r",
+											"    pm.response.to.have.status(422);\r",
+											"});\r",
+											"\r",
+											"//STATUS DE CRIADO COM SUCESSO\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"Unprocessable Entity\");\r",
+											"});\r",
+											"\r",
+											"//RETORNA MSG DE ERRO\r",
+											"pm.test(\"Retorna msg de erro\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"can't be blank, can be male of female\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "b4956039-ce05-4fb0-acf0-64d33fa5af58",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"gender\": \"\",\r\n    \"email\": \"{{email}}\",\r\n    \"status\": \"{{status}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_gorest}}/users"
+							},
+							"response": []
+						},
+						{
+							"name": "[CT005]Validar obrigatoriedade do campo Email",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "c5b5d6e7-082f-41e1-a479-f42f0d0a3609",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "f0a13344-52ca-4401-b441-05a072c9756f",
+										"exec": [
+											"//STATUS CODE DE SUCESSO\r",
+											"pm.test(\"Status code is 422\", function () {\r",
+											"    pm.response.to.have.status(422);\r",
+											"});\r",
+											"\r",
+											"//STATUS DE CRIADO COM SUCESSO\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"Unprocessable Entity\");\r",
+											"});\r",
+											"\r",
+											"//RETORNA MSG DE ERRO\r",
+											"pm.test(\"Retorna msg de erro\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"can't be blank\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "b56195bd-d24b-4af4-a278-9f84f9cc6aa9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"gender\": \"{{gender}}\",\r\n    \"email\": \"\",\r\n    \"status\": \"{{status}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_gorest}}/users"
+							},
+							"response": []
+						},
+						{
+							"name": "[CT006]Validar obrigatoriedade do campo Status",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "c5b5d6e7-082f-41e1-a479-f42f0d0a3609",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "f0a13344-52ca-4401-b441-05a072c9756f",
+										"exec": [
+											"//STATUS CODE DE SUCESSO\r",
+											"pm.test(\"Status code is 422\", function () {\r",
+											"    pm.response.to.have.status(422);\r",
+											"});\r",
+											"\r",
+											"//STATUS DE CRIADO COM SUCESSO\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"Unprocessable Entity\");\r",
+											"});\r",
+											"\r",
+											"//RETORNA MSG DE ERRO\r",
+											"pm.test(\"Retorna msg de erro\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"can't be blank\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "e97be672-e9d6-42c0-9416-99ce67affd3b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"gender\": \"{{gender}}\",\r\n    \"email\": \"\",\r\n    \"status\": \"{{status}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
