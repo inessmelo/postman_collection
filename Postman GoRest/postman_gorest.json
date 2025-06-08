@@ -14,6 +14,51 @@
 					"item": [
 						{
 							"name": "[CT001]Cadastro de usuário com sucesso",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "b061b66e-8955-4208-a7a5-b5dd7061c369",
+										"exec": [
+											"pm.environment.set(\"gender\", \"male\")\r",
+											"pm.environment.set(\"status\", \"inactive\")"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "32dee309-33fb-44da-a003-e17c185fe0cc",
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);  // Guarda seu response em uma variavel\r",
+											"\r",
+											"var tagRecuperada = jsonData.x.id;          // Guarda a tag que vc esta procurando (nesse caso 'list_id') em uma variavel\r",
+											"\r",
+											"pm.environment.set(\"id_user_busca\", tagRecupera)   // seta o valor da tag extraida na variavel de ambiente 'id_list_lead'\r",
+											"\r",
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"Created\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"name\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 2seg\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "9bc04c21-df56-465b-9d3a-57351d01432a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -23,7 +68,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"status\": \"inactive\"\r\n}",
+									"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"gender\": {{gender}},\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"status\": {{status}}\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
