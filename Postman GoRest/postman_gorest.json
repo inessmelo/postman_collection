@@ -883,7 +883,7 @@
 					"name": "Editar usuario",
 					"item": [
 						{
-							"name": "New Request",
+							"name": "[CT001]Atualizar com sucesso",
 							"id": "7473cc4d-e937-439d-b650-7e969ca345fb",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -893,14 +893,14 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"email\": \"{{email}}\",\r\n    \"status\": \"{{status}}\"\r\n}\r\n",
+									"raw": "{\r\n    \"name\": \"Allasani Peddana\",\r\n    \"email\": \"allasani.peddana@15ce.com\",\r\n    \"status\": \"active\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{url_gorest}}/users/7439586"
+								"url": "{{url_gorest}}/users/7937948"
 							},
 							"response": []
 						}
