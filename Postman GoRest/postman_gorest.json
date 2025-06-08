@@ -450,7 +450,6 @@
 									"script": {
 										"id": "47537ab5-7c74-4ff9-a397-72cdd23ea3bf",
 										"exec": [
-											"\r",
 											"//RETORNA NOME\r",
 											"pm.test(\"Retorna os nomes\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"Lena Kuphal\");\r",
@@ -498,6 +497,7 @@
 										"exec": [
 											"pm.test(\"Retorna dados da busca\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"7937559\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Leo Wolf\");\r",
 											"    pm.expect(pm.response.text()).to.include(\"Krystel_Fahey@hotmail.com\");\r",
 											"    pm.expect(pm.response.text()).to.include(\"male\");\r",
 											"    pm.expect(pm.response.text()).to.include(\"active\");\r",
