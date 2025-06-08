@@ -348,7 +348,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"gender\": \"{{gender}}\",\r\n    \"email\": \"\",\r\n    \"status\": \"{{status}}\"\r\n}",
+									"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"gender\": \"{{gender}}\",\r\n    \"email\": \"{{email}}\",\r\n    \"status\": \"\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
